@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="메인 대표 사진 임시 이미지">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE8DC"/>
+      <stop offset="100%" stop-color="#FFD3C0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="168" cy="144" r="117" fill="#ffffff" opacity="0.45"/>
+  <circle cx="1056" cy="738" r="180" fill="#ffffff" opacity="0.35"/>
+  <circle cx="960" cy="162" r="63" fill="#ffffff" opacity="0.5"/>
+  <g transform="translate(600.0 369.0) scale(3.462)" fill="#F0A88E">
+    <g><circle cx="-26" cy="-30" r="14"/><circle cx="26" cy="-30" r="14"/><circle cx="0" cy="0" r="40"/><circle cx="-14" cy="-6" r="4.5" fill="#fff"/><circle cx="14" cy="-6" r="4.5" fill="#fff"/><ellipse cx="0" cy="12" rx="13" ry="10" fill="#fff"/></g>
+  </g>
+  <text x="600.0" y="666.0" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="47" font-weight="700" fill="#8a7466">메인 대표 사진</text>
+  <text x="600.0" y="729.45" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="34" fill="#a8968a">사진을 넣어주세요</text>
+</svg>

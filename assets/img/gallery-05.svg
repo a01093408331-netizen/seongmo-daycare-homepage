@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="실내 놀이터 임시 이미지">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8F1F8"/>
+      <stop offset="100%" stop-color="#D5E6F3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="112" cy="128" r="104" fill="#ffffff" opacity="0.45"/>
+  <circle cx="704" cy="656" r="160" fill="#ffffff" opacity="0.35"/>
+  <circle cx="640" cy="144" r="56" fill="#ffffff" opacity="0.5"/>
+  <g transform="translate(400.0 328.0) scale(3.077)" fill="#9CC7E8">
+    <path d="M0-48 14-16l34 3-26 23 8 34L0 26l-30 18 8-34-26-23 34-3z"/>
+  </g>
+  <text x="400.0" y="592.0" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="42" font-weight="700" fill="#8a7466">실내 놀이터</text>
+  <text x="400.0" y="648.7" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="30" fill="#a8968a">사진을 넣어주세요</text>
+</svg>

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성모영아전담어린이집 | 만 0~2세 영아전담 어린이집</title>
+<meta name="description" content="부산 수영구 망미동 성모영아전담어린이집. 만 0~2세 영아전담 어린이집으로 아이 중심·놀이 중심 보육, 안정적인 애착과 따뜻한 돌봄을 실천합니다. 입소상담 051-751-9820.">
+<meta name="theme-color" content="#FFFBF6">
+
+<!-- 카카오톡·페이스북 등에 링크를 공유할 때 보이는 정보입니다 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="성모영아전담어린이집">
+<meta property="og:description" content="작은 아이의 오늘을 소중히, 행복한 내일을 함께 준비합니다.">
+<meta property="og:image" content="assets/img/hero-main.jpg">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+
+<!-- 한글 폰트(Pretendard). 인터넷이 없어도 기본 글꼴로 자동 대체됩니다 -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- ★ 사진 자동 교체 장치 ★
+     assets/img 폴더에 사진을 넣기만 하면 자동으로 홈페이지에 나타납니다.
+     찾는 순서 : 사진이름.jpg → 사진이름.png → (없으면) 임시 그림
+     코드를 고치실 필요가 없습니다. -->
+<script>
+function nextPhoto(img) {
+  var list = (img.getAttribute('data-fallback') || '').split(',').filter(Boolean);
+  var next = list.shift();
+  img.setAttribute('data-fallback', list.join(','));
+  if (next) { img.src = next; } else { img.onerror = null; }
+}
+</script>
+
+<!-- 네이버·구글 검색에서 어린이집 정보가 잘 나오도록 돕는 부분입니다 (화면에는 보이지 않습니다) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ChildCare",
+  "name": "성모영아전담어린이집",
+  "description": "만 0~2세 영아를 위한 영아전담 어린이집",
+  "telephone": "+82-51-751-9820",
+  "email": "sungmo720@naver.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "망미로7번길 17",
+    "addressLocality": "수영구",
+    "addressRegion": "부산광역시",
+    "addressCountry": "KR"
+  },
+  "openingHours": "Mo-Fr 07:30-19:30",
+  "sameAs": [
+    "https://blog.naver.com/sungmo7519820",
+    "https://www.instagram.com/sungmo7519820/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#intro">본문 바로가기</a>
+
+<!-- ===================== 상단 메뉴 ===================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+
+    <a class="logo" href="#home" aria-label="성모영아전담어린이집 홈으로">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="38" height="38">
+          <circle cx="24" cy="24" r="24" fill="#F2A18B"/>
+          <path d="M24 35c-12-7.4-15.2-14.3-11.5-19 2.9-3.7 8.4-2.9 11.5 1.6 3.1-4.5 8.6-5.3 11.5-1.6C39.2 20.7 36 27.6 24 35z" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="logo__text">
+        <strong>성모영아전담어린이집</strong>
+        <em>만 0~2세 영아전담</em>
+      </span>
+    </a>
+
+    <div class="header__right">
+      <!-- 전화번호를 바꾸시려면 tel: 뒤 번호와 화면에 보이는 번호를 함께 수정하세요 -->
+      <a class="header__tel" href="tel:0517519820"><span aria-hidden="true">📞</span> 051-751-9820</a>
+      <a class="btn btn--primary btn--sm header__cta" href="#contact">입소상담</a>
+    </div>
+
+    <nav class="gnb" aria-label="주메뉴">
+      <ul>
+        <li><a href="#intro">어린이집 소개</a></li>
+        <li><a href="#strength">우리 원의 장점</a></li>
+        <li><a href="#infant">영아전담 보육</a></li>
+        <li><a href="#play">놀이·교육활동</a></li>
+        <li><a href="#day">우리 아이의 하루</a></li>
+        <li><a href="#communication">가정과의 소통</a></li>
+        <li><a href="#gallery">사진으로 보는 어린이집</a></li>
+        <li><a href="#admission">입소안내</a></li>
+        <li><a href="#contact">상담 및 문의</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="menuBtn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== 모바일 메뉴 ===================== -->
+<div class="mnav" id="mobileNav" hidden>
+  <nav class="mnav__panel" aria-label="모바일 주메뉴">
+    <div class="mnav__head">
+      <strong>성모영아전담어린이집</strong>
+      <button class="mnav__close" id="menuClose" type="button" aria-label="메뉴 닫기">&times;</button>
+    </div>
+    <ul class="mnav__list">
+      <li><a href="#intro">어린이집 소개</a></li>
+      <li><a href="#strength">우리 원의 장점</a></li>
+      <li><a href="#infant">영아전담 보육</a></li>
+      <li><a href="#play">놀이·교육활동</a></li>
+      <li><a href="#day">우리 아이의 하루</a></li>
+      <li><a href="#communication">가정과의 소통</a></li>
+      <li><a href="#gallery">사진으로 보는 어린이집</a></li>
+      <li><a href="#admission">입소안내</a></li>
+      <li><a href="#contact">상담 및 문의</a></li>
+    </ul>
+    <div class="mnav__cta">
+      <a class="btn btn--primary btn--block" href="#contact">입소상담 신청</a>
+      <a class="btn btn--ghost btn--block" href="#admission">입소대기 안내</a>
+    </div>
+  </nav>
+</div>
+
+<main id="home">
+
+  <!-- ===================== 메인 비주얼 ===================== -->
+  <section class="hero" aria-label="메인 소개">
+    <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__text reveal">
+        <p class="hero__badge">만 0세 ~ 만 2세 영아전담 어린이집</p>
+
+        <h1 class="hero__title">
+          작은 아이의 오늘을 소중히,<br>
+          <span class="hero__title-accent">행복한 내일을 함께 준비합니다.</span>
+        </h1>
+
+        <p class="hero__sub">아이의 행복을 가장 먼저 생각하는 성모영아전담어린이집</p>
+
+        <div class="hero__btns">
+          <a class="btn btn--primary btn--lg" href="#contact">입소상담 신청하기</a>
+          <a class="btn btn--outline btn--lg" href="#admission">입소대기 안내</a>
+        </div>
+
+        <ul class="hero__points">
+          <li>영아 발달에 맞춘 맞춤 돌봄</li>
+          <li>아이 중심·놀이 중심 보육</li>
+          <li>가정과 함께하는 소통</li>
+        </ul>
+      </div>
+
+      <div class="hero__media reveal reveal--delay">
+        <!-- 사진 넣기 : assets/img 폴더에 hero-main.jpg 를 넣으면 자동으로 바뀝니다 -->
+        <div class="hero__photo">
+          <img src="assets/img/hero-main.jpg" data-fallback="assets/img/hero-main.png,assets/img/hero-main.svg" onerror="nextPhoto(this)" alt="성모영아전담어린이집 대표 이미지" width="1200" height="900" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero__chip hero__chip--1">
+          <span aria-hidden="true">🌿</span> 안전하고 쾌적한 보육환경
+        </div>
+        <div class="hero__chip hero__chip--2">
+          <span aria-hidden="true">💛</span> 안정적인 애착 형성
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 1. 어린이집 소개 ===================== -->
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">어린이집 소개</p>
+        <h2 class="sec-head__title">아이의 하루가<br class="br-mo"> 편안하고 행복한 곳</h2>
+        <p class="sec-head__desc">
+          성모영아전담어린이집은 만 0세부터 만 2세까지, 세상을 처음 만나는 영아만을 위한 영아전담 어린이집입니다.
+          가장 많이 자라고 가장 많이 사랑이 필요한 시기, 아이 한 명 한 명의 속도에 맞추어 따뜻하게 돌봅니다.
+        </p>
+      </div>
+
+      <div class="intro-grid">
+        <div class="intro-media reveal">
+          <!-- 사진 넣기 : about-01.jpg -->
+          <img src="assets/img/about-01.jpg" data-fallback="assets/img/about-01.png,assets/img/about-01.svg" onerror="nextPhoto(this)" alt="성모영아전담어린이집 소개 사진" width="1000" height="750" loading="lazy" decoding="async">
+        </div>
+
+        <div class="intro-body reveal reveal--delay">
+          <h3 class="intro-body__title">부모님의 마음으로 돌보겠습니다</h3>
+          <p>
+            처음 아이를 맡기는 부모님의 마음을 잘 알고 있습니다. 그래서 우리 원은 화려한 프로그램보다
+            <b>아이가 안심할 수 있는 하루</b>를 먼저 준비합니다. 익숙한 선생님, 예측 가능한 일과,
+            충분한 안아주기 속에서 아이는 세상을 편안하게 배워갑니다.
+          </p>
+
+          <ul class="value-list">
+            <li><span aria-hidden="true">🌸</span><div><b>아이의 행복</b><p>웃으며 등원하고 웃으며 하원하는 하루를 만듭니다.</p></div></li>
+            <li><span aria-hidden="true">🛡️</span><div><b>안전한 보육</b><p>영아 눈높이의 안전 점검과 위생 관리를 매일 실천합니다.</p></div></li>
+            <li><span aria-hidden="true">🤍</span><div><b>따뜻한 돌봄</b><p>울음에도 이유가 있다는 마음으로 아이의 신호에 반응합니다.</p></div></li>
+            <li><span aria-hidden="true">🧸</span><div><b>놀이 중심 보육</b><p>영아에게 놀이는 곧 배움입니다. 놀이로 자라도록 돕습니다.</p></div></li>
+            <li><span aria-hidden="true">💬</span><div><b>부모와의 소통</b><p>오늘 아이의 하루를 부모님과 함께 나눕니다.</p></div></li>
+          </ul>
+
+          <a class="btn btn--primary" href="#contact">우리 원 상담받기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. 우리 원의 장점 ===================== -->
+  <section class="section section--tint" id="strength">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">우리 원의 장점</p>
+        <h2 class="sec-head__title">성모영아전담어린이집을<br class="br-mo"> 선택하는 10가지 이유</h2>
+        <p class="sec-head__desc">영아만을 돌보는 어린이집이기에 가능한, 세심하고 전문적인 보육을 약속드립니다.</p>
+      </div>
+
+      <!-- 사진 넣기 : strength-banner.jpg (가로로 넓은 수채화 그림) -->
+      <figure class="strength-banner reveal">
+        <div class="strength-banner__media">
+          <img src="assets/img/strength-banner.jpg" data-fallback="assets/img/strength-banner.png,assets/img/strength-banner.svg" onerror="nextPhoto(this)" alt="선생님과 아이들이 함께 있는 따뜻한 수채화 그림" width="1600" height="800" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="strength-banner__caption">
+          <h3>선생님과 함께라서, 오늘도 행복한 하루</h3>
+          <p>
+            아이에게 가장 큰 힘이 되는 것은 늘 곁에 있어 주는 어른입니다.
+            성모영아전담어린이집의 선생님들은 아이의 눈높이에서 함께 웃고, 기다려 주고, 안아 줍니다.
+            그 따뜻한 하루가 모여 아이의 마음이 자랍니다.
+          </p>
+        </figcaption>
+      </figure>
+
+      <ul class="strength-grid">
+        <li class="s-card reveal"><span class="s-card__no">01</span><span class="s-card__icon" aria-hidden="true">👶</span><h3>만 0~2세 영아전담</h3><p>영아만을 위한 공간과 일과로 운영되는 영아전담 어린이집입니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">02</span><span class="s-card__icon" aria-hidden="true">🌱</span><h3>발달 맞춤 세심한 돌봄</h3><p>월령별 발달 특성을 고려해 아이마다 다른 속도를 존중합니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">03</span><span class="s-card__icon" aria-hidden="true">🎈</span><h3>아이 중심·놀이 중심</h3><p>아이의 흥미에서 시작하는 놀이로 스스로 배우도록 돕습니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">04</span><span class="s-card__icon" aria-hidden="true">🤱</span><h3>안정적인 애착과 정서 돌봄</h3><p>일관된 반응과 충분한 스킨십으로 정서적 안정을 지켜줍니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">05</span><span class="s-card__icon" aria-hidden="true">✋</span><h3>다양한 오감놀이·체험활동</h3><p>보고 만지고 느끼는 경험으로 감각과 호기심을 키웁니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">06</span><span class="s-card__icon" aria-hidden="true">🍂</span><h3>계절과 흥미를 담은 놀이</h3><p>계절의 변화와 아이의 관심을 반영해 놀이를 새롭게 구성합니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">07</span><span class="s-card__icon" aria-hidden="true">💬</span><h3>부모 소통·가정연계</h3><p>알림장과 상담으로 가정과 어린이집이 한 방향으로 나아갑니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">08</span><span class="s-card__icon" aria-hidden="true">🧼</span><h3>안전하고 쾌적한 환경</h3><p>매일의 소독과 안전 점검으로 깨끗한 공간을 유지합니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">09</span><span class="s-card__icon" aria-hidden="true">🎓</span><h3>교직원의 전문성</h3><p>영아 보육 경험과 꾸준한 연수를 바탕으로 질 높은 보육을 제공합니다.</p></li>
+        <li class="s-card reveal"><span class="s-card__no">10</span><span class="s-card__icon" aria-hidden="true">⭐</span><h3>개성과 발달을 존중</h3><p>아이 한 명 한 명을 있는 그대로 바라보고 존중합니다.</p></li>
+      </ul>
+
+      <div class="strength-cta reveal">
+        <p>궁금한 점이 있으신가요? 부담 없이 문의해 주세요.</p>
+        <a class="btn btn--primary" href="#contact">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. 영아전담 보육 ===================== -->
+  <section class="section" id="infant">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">영아전담 보육</p>
+        <h2 class="sec-head__title">연령에 꼭 맞는 보육</h2>
+        <p class="sec-head__desc">같은 영아라도 6개월의 차이는 아주 큽니다. 우리 원은 연령별로 다른 돌봄을 준비합니다.</p>
+      </div>
+
+      <div class="age-grid">
+        <article class="age-card reveal">
+          <div class="age-card__media">
+            <!-- 사진 넣기 : care-age0.jpg -->
+            <img src="assets/img/care-age0.jpg" data-fallback="assets/img/care-age0.png,assets/img/care-age0.svg" onerror="nextPhoto(this)" alt="만 0세 반 보육 이미지" width="800" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="age-card__body">
+            <span class="tag tag--coral">만 0세</span>
+            <h3>편안한 리듬과 애착</h3>
+            <ul>
+              <li>아이별 수유·이유식·낮잠 리듬 존중</li>
+              <li>눈맞춤과 안아주기로 애착 형성</li>
+              <li>소리·촉감 중심의 첫 감각놀이</li>
+              <li>기저귀·위생 관리 세심하게 기록</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="age-card reveal reveal--delay">
+          <div class="age-card__media">
+            <!-- 사진 넣기 : care-age1.jpg -->
+            <img src="assets/img/care-age1.jpg" data-fallback="assets/img/care-age1.png,assets/img/care-age1.svg" onerror="nextPhoto(this)" alt="만 1세 반 보육 이미지" width="800" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="age-card__body">
+            <span class="tag tag--sage">만 1세</span>
+            <h3>걷고 만지며 넓어지는 세상</h3>
+            <ul>
+              <li>걷기·오르기 등 대근육 활동 확대</li>
+              <li>탐색놀이로 호기심 채우기</li>
+              <li>첫 낱말과 표현을 함께 기다려주기</li>
+              <li>스스로 해보는 경험 늘려주기</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="age-card reveal reveal--delay2">
+          <div class="age-card__media">
+            <!-- 사진 넣기 : care-age2.jpg -->
+            <img src="assets/img/care-age2.jpg" data-fallback="assets/img/care-age2.png,assets/img/care-age2.svg" onerror="nextPhoto(this)" alt="만 2세 반 보육 이미지" width="800" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="age-card__body">
+            <span class="tag tag--sky">만 2세</span>
+            <h3>친구와 함께, 나를 표현하기</h3>
+            <ul>
+              <li>또래와 어울리는 놀이 경험</li>
+              <li>말과 몸으로 감정 표현하기</li>
+              <li>기본생활습관(식사·정리·배변) 지도</li>
+              <li>역할놀이·미술 등 표현활동 확대</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. 놀이·교육활동 ===================== -->
+  <section class="section section--tint" id="play">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">놀이·교육활동</p>
+        <h2 class="sec-head__title">놀이가 곧 배움입니다</h2>
+        <p class="sec-head__desc">영아에게 가장 좋은 교육은 즐거운 놀이입니다. 아이의 흥미와 계절을 담아 매일의 놀이를 준비합니다.</p>
+      </div>
+
+      <div class="play-grid">
+        <article class="p-card reveal">
+          <div class="p-card__media"><img src="assets/img/play-01.jpg" data-fallback="assets/img/play-01.png,assets/img/play-01.svg" onerror="nextPhoto(this)" alt="오감놀이 활동 사진" width="900" height="675" loading="lazy" decoding="async"></div>
+          <div class="p-card__body"><h3>오감놀이</h3><p>밀가루, 물, 천, 곡식 등 안전한 재료로 보고 만지며 감각을 깨웁니다.</p></div>
+        </article>
+        <article class="p-card reveal reveal--delay">
+          <div class="p-card__media"><img src="assets/img/play-02.jpg" data-fallback="assets/img/play-02.png,assets/img/play-02.svg" onerror="nextPhoto(this)" alt="신체놀이 활동 사진" width="900" height="675" loading="lazy" decoding="async"></div>
+          <div class="p-card__body"><h3>신체놀이</h3><p>기어가기, 걷기, 오르내리기 등 몸을 마음껏 움직이며 건강하게 자랍니다.</p></div>
+        </article>
+        <article class="p-card reveal reveal--delay2">
+          <div class="p-card__media"><img src="assets/img/play-03.jpg" data-fallback="assets/img/play-03.png,assets/img/play-03.svg" onerror="nextPhoto(this)" alt="선생님과 아이가 숲길에서 낙엽을 보며 웃는 사진" width="900" height="675" loading="lazy" decoding="async"></div>
+          <div class="p-card__body"><h3>자연·계절놀이</h3><p>봄꽃, 여름물, 가을잎, 겨울눈. 계절을 몸으로 만나는 시간을 가집니다.</p></div>
+        </article>
+        <article class="p-card reveal reveal--delay3">
+          <div class="p-card__media"><img src="assets/img/play-04.jpg" data-fallback="assets/img/play-04.png,assets/img/play-04.svg" onerror="nextPhoto(this)" alt="아이가 어머니와 함께 면봉으로 그림을 그리는 사진" width="900" height="675" loading="lazy" decoding="async"></div>
+          <div class="p-card__body"><h3>표현·미술활동</h3><p>끄적이기, 붙이기, 두드리기로 아이만의 표현을 마음껏 펼칩니다.</p></div>
+        </article>
+      </div>
+
+      <p class="play-note reveal">
+        ※ 활동은 아이들의 흥미와 발달, 계절에 따라 유연하게 운영됩니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 5. 우리 아이의 하루 ===================== -->
+  <section class="section" id="day">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">우리 아이의 하루</p>
+        <h2 class="sec-head__title">편안하고 예측 가능한 하루</h2>
+        <p class="sec-head__desc">일정한 리듬은 영아에게 큰 안정감을 줍니다. 아이의 상태에 따라 시간은 유연하게 조정됩니다.</p>
+      </div>
+
+      <div class="day-wrap">
+        <ol class="timeline reveal">
+          <li><span class="timeline__time">07:30~09:00</span><div><b>등원 및 맞이하기</b><p>선생님과 눈을 맞추며 반갑게 인사하고 건강 상태를 살펴요.</p></div></li>
+          <li><span class="timeline__time">09:00~09:40</span><div><b>오전 간식</b><p>손 씻기부터 천천히, 편안한 분위기에서 간식을 먹어요.</p></div></li>
+          <li><span class="timeline__time">09:40~11:00</span><div><b>오전 놀이</b><p>오감놀이·탐색놀이 등 오늘의 놀이를 즐겨요.</p></div></li>
+          <li><span class="timeline__time">11:00~12:00</span><div><b>점심 식사</b><p>영아식으로 준비된 균형 잡힌 식사를 즐겁게 먹어요.</p></div></li>
+          <li><span class="timeline__time">12:00~14:30</span><div><b>낮잠 및 휴식</b><p>포근한 이불에서 충분히 쉬며 에너지를 채워요.</p></div></li>
+          <li><span class="timeline__time">14:30~15:10</span><div><b>오후 간식</b><p>일어나 기지개를 켜고 맛있는 간식을 먹어요.</p></div></li>
+          <li><span class="timeline__time">15:10~16:30</span><div><b>오후 놀이·실외활동</b><p>날씨가 좋은 날엔 바깥 공기를 마시며 산책해요.</p></div></li>
+          <li><span class="timeline__time">16:30~</span><div><b>귀가 준비 및 하원</b><p>오늘 하루 이야기를 부모님께 전해드려요.</p></div></li>
+        </ol>
+
+        <aside class="day-side reveal reveal--delay">
+          <div class="day-side__media">
+            <!-- 사진 넣기 : day-01.jpg -->
+            <img src="assets/img/day-01.jpg" data-fallback="assets/img/day-01.png,assets/img/day-01.svg" onerror="nextPhoto(this)" alt="아이들의 하루 일과 사진" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="day-side__box">
+            <h3>이런 점을 지켜드려요</h3>
+            <ul>
+              <li>아이마다 다른 수유·낮잠 리듬 존중</li>
+              <li>매일 건강·기분·식사·배변 기록</li>
+              <li>적응 기간에는 단축 보육으로 천천히</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#contact">하루 일과 더 알아보기</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. 가정과의 소통 ===================== -->
+  <section class="section section--tint" id="communication">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">가정과의 소통</p>
+        <h2 class="sec-head__title">함께 키우는 마음으로</h2>
+        <p class="sec-head__desc">어린이집에서의 하루가 가정으로 이어지도록, 부모님과 자주 그리고 정확하게 소통합니다.</p>
+      </div>
+
+      <div class="comm-grid">
+        <div class="comm-media reveal">
+          <!-- 사진 넣기 : comm-01.jpg -->
+          <img src="assets/img/comm-01.jpg" data-fallback="assets/img/comm-01.png,assets/img/comm-01.svg" onerror="nextPhoto(this)" alt="가정과의 소통 이미지" width="900" height="675" loading="lazy" decoding="async">
+        </div>
+
+        <ul class="comm-list reveal reveal--delay">
+          <li><span aria-hidden="true">📝</span><div><b>매일 알림장</b><p>식사·낮잠·배변·기분 등 아이의 하루를 자세히 전해드립니다.</p></div></li>
+          <li><span aria-hidden="true">📷</span><div><b>활동 사진 공유</b><p>놀이하는 모습을 사진으로 함께 나눕니다.</p></div></li>
+          <li><span aria-hidden="true">☎️</span><div><b>수시 상담</b><p>궁금한 점은 언제든 편하게 문의하실 수 있습니다.</p></div></li>
+          <li><span aria-hidden="true">🤝</span><div><b>정기 부모상담</b><p>아이의 발달과 변화를 함께 이야기 나눕니다.</p></div></li>
+          <li><span aria-hidden="true">🏡</span><div><b>가정연계 활동</b><p>원에서의 놀이를 집에서도 이어갈 수 있도록 안내드립니다.</p></div></li>
+          <li><span aria-hidden="true">📢</span><div><b>운영 안내</b><p>행사·휴원·식단 등 필요한 정보를 미리 공지합니다.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- ===== 블로그 최신 글 (자동으로 채워집니다 · 손대지 않으셔도 됩니다) ===== -->
+      <div class="news reveal" id="newsBlock" hidden>
+        <div class="news__head">
+          <h3>우리 원 최신 소식</h3>
+          <a class="btn btn--outline btn--sm" href="https://blog.naver.com/sungmo7519820" target="_blank" rel="noopener">블로그 전체 보기 <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="news__list" id="newsList"></ul>
+        <p class="news__updated" id="newsUpdated"></p>
+      </div>
+
+      <!-- ===== 인스타그램 최신 게시물 (자동으로 채워집니다) =====
+           위젯을 바꾸시려면 아래 <iframe> 한 줄만 새 코드로 교체하세요. -->
+      <div class="insta reveal">
+        <div class="news__head">
+          <h3>인스타그램 소식</h3>
+          <a class="btn btn--outline btn--sm" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">인스타그램 팔로우 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="insta__frame" id="instagramWidget">
+          <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+          <iframe src="https://lightwidget.com/widgets/546d9f56143c5b17874ab2c72c454639.html"
+                  title="성모영아전담어린이집 인스타그램 최신 게시물"
+                  scrolling="no" allowtransparency="true" loading="lazy"
+                  class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. 사진으로 보는 어린이집 ===================== -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">사진으로 보는 어린이집</p>
+        <h2 class="sec-head__title">우리 원의 모습</h2>
+        <p class="sec-head__desc">우리 아이들이 웃고 자라는 즐거운 순간들을 담았습니다.</p>
+      </div>
+
+      <!-- 사진 넣기 : gallery-01.jpg ~ gallery-08.jpg -->
+      <ul class="gallery">
+        <li class="reveal"><figure><img src="assets/img/gallery-01.jpg" data-fallback="assets/img/gallery-01.png,assets/img/gallery-01.svg" onerror="nextPhoto(this)" alt="아이들이 나무 아래에서 손잡고 서 있는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>함께한 나들이</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-02.jpg" data-fallback="assets/img/gallery-02.png,assets/img/gallery-02.svg" onerror="nextPhoto(this)" alt="아이들이 마트놀이 카트를 밀며 노는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>역할놀이</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-03.jpg" data-fallback="assets/img/gallery-03.png,assets/img/gallery-03.svg" onerror="nextPhoto(this)" alt="선생님과 아이들이 신문지를 가지고 노는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>오감놀이</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-04.jpg" data-fallback="assets/img/gallery-04.png,assets/img/gallery-04.svg" onerror="nextPhoto(this)" alt="생일 축하 상 앞에서 아이들이 웃고 있는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>생일 축하</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-05.jpg" data-fallback="assets/img/gallery-05.png,assets/img/gallery-05.svg" onerror="nextPhoto(this)" alt="아이들이 놀이 텐트 안에서 웃고 있는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>편안한 휴식</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-06.jpg" data-fallback="assets/img/gallery-06.png,assets/img/gallery-06.svg" onerror="nextPhoto(this)" alt="선생님과 아이들이 응원술을 들고 율동하는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>음률·율동</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-07.jpg" data-fallback="assets/img/gallery-07.png,assets/img/gallery-07.svg" onerror="nextPhoto(this)" alt="아이가 바람개비를 들고 바깥에서 노는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>야외 활동</figcaption></figure></li>
+        <li class="reveal"><figure><img src="assets/img/gallery-08.jpg" data-fallback="assets/img/gallery-08.png,assets/img/gallery-08.svg" onerror="nextPhoto(this)" alt="아이들이 주제 게시판을 살펴보는 사진" width="800" height="800" loading="lazy" decoding="async"><figcaption>교구·환경</figcaption></figure></li>
+      </ul>
+
+      <!-- 블로그·인스타그램 : 주소를 바꾸시려면 아래 href 를 수정하세요 -->
+      <div class="sns-band reveal">
+        <p class="sns-band__text">더 많은 우리 원의 일상은 블로그와 인스타그램에서 만나보실 수 있어요.</p>
+        <ul class="sns">
+          <li>
+            <a class="sns__btn sns__btn--blog" href="https://blog.naver.com/sungmo7519820" target="_blank" rel="noopener">
+              <span class="sns__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3h9l5 5v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm8 1.8V9h4.2L13 4.8zM7.5 12h9v1.6h-9V12zm0 3.4h9V17h-9v-1.6z"/></svg>
+              </span>
+              네이버 블로그
+            </a>
+          </li>
+          <li>
+            <a class="sns__btn sns__btn--insta" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">
+              <span class="sns__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              인스타그램
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="strength-cta reveal">
+        <p>직접 방문해서 보고 싶으신가요?</p>
+        <a class="btn btn--primary" href="#contact">방문 상담 신청</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. 입소안내 ===================== -->
+  <section class="section section--tint" id="admission">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">입소안내</p>
+        <h2 class="sec-head__title">원아모집 및 입소대기 안내</h2>
+        <p class="sec-head__desc">입소는 정부 보육통합정보(임신육아종합포털 아이사랑) 입소대기 신청을 통해 진행됩니다.</p>
+      </div>
+
+      <div class="adm-grid">
+        <div class="adm-info reveal">
+          <div class="adm-box">
+            <h3>모집 안내</h3>
+            <dl class="adm-dl">
+              <div><dt>모집 대상</dt><dd>만 0세 ~ 만 2세 영아</dd></div>
+              <div><dt>모집 시기</dt><dd>수시 모집 (반별 정원 충족 시 대기)</dd></div>
+              <div><dt>운영 시간</dt><dd>평일 07:30 ~ 19:30</dd></div>
+              <div><dt>보육 형태</dt><dd>영아전담 어린이집</dd></div>
+            </dl>
+            <p class="adm-note">※ 정확한 모집 현황과 정원은 원으로 문의해 주세요.</p>
+          </div>
+
+          <div class="adm-box">
+            <h3>입소 절차</h3>
+            <ol class="steps">
+              <li><span>1</span><div><b>전화·온라인 문의</b><p>궁금한 점을 편하게 문의해 주세요.</p></div></li>
+              <li><span>2</span><div><b>방문 상담 및 원 견학</b><p>직접 보시고 아이에게 맞는지 확인하세요.</p></div></li>
+              <li><span>3</span><div><b>입소대기 신청</b><p>아이사랑 포털에서 대기 신청을 진행합니다.</p></div></li>
+              <li><span>4</span><div><b>입소 확정 및 서류 제출</b><p>순번에 따라 연락드리며 서류를 준비합니다.</p></div></li>
+              <li><span>5</span><div><b>적응 기간 시작</b><p>단축 보육으로 아이가 천천히 적응하도록 돕습니다.</p></div></li>
+            </ol>
+          </div>
+        </div>
+
+        <aside class="adm-side reveal reveal--delay">
+          <div class="adm-side__media">
+            <!-- 사진 넣기 : admission-01.jpg -->
+            <img src="assets/img/admission-01.jpg" data-fallback="assets/img/admission-01.png,assets/img/admission-01.svg" onerror="nextPhoto(this)" alt="아이들이 색색의 천을 잡고 함께 노는 사진" width="1000" height="700" loading="lazy" decoding="async">
+          </div>
+          <div class="adm-side__cta">
+            <h3>지금 바로 상담해 보세요</h3>
+            <p>대기 순번과 입소 가능 시기를 알려드립니다.</p>
+            <!-- 카카오톡 입소상담 채널 -->
+            <a class="btn btn--kakao btn--block" href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">카카오톡으로 상담하기</a>
+            <a class="btn btn--outline btn--block" href="tel:0517519820">전화 문의하기 (051-751-9820)</a>
+            <a class="btn btn--outline btn--block" href="#contact">온라인 상담 신청</a>
+            <a class="btn btn--ghost btn--block" href="https://www.childcare.go.kr" target="_blank" rel="noopener">아이사랑 입소대기 신청 <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. 상담 및 문의 ===================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-head__eyebrow">상담 및 문의</p>
+        <h2 class="sec-head__title">부담 없이 문의해 주세요</h2>
+        <p class="sec-head__desc">남겨주신 내용은 확인 후 빠르게 연락드리겠습니다.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- 원 정보 : 아래 내용을 실제 정보로 바꿔주세요 -->
+        <div class="contact-info reveal">
+          <h3>성모영아전담어린이집</h3>
+          <ul class="cinfo">
+            <li><span aria-hidden="true">📞</span><div><b>전화</b><p><a href="tel:0517519820">051-751-9820</a></p></div></li>
+            <li><span aria-hidden="true">📱</span><div><b>휴대전화</b><p><a href="tel:01093408331">010-9340-8331</a></p></div></li>
+            <li><span aria-hidden="true">📍</span><div><b>주소</b><p>부산광역시 수영구 망미로7번길 17<br>
+              <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8%2017" target="_blank" rel="noopener">지도에서 보기 <span aria-hidden="true">↗</span></a></p></div></li>
+            <li><span aria-hidden="true">🕒</span><div><b>운영시간</b><p>평일 07:30 ~ 19:30 / 토·일·공휴일 휴원</p></div></li>
+            <li><span aria-hidden="true">✉️</span><div><b>이메일</b><p><a href="mailto:sungmo720@naver.com">sungmo720@naver.com</a></p></div></li>
+            <li><span aria-hidden="true">💬</span><div><b>입소상담 채널</b><p><a href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">카카오톡 오픈채팅으로 상담하기</a></p></div></li>
+          </ul>
+
+          <!-- 카카오톡 입소상담 채널 -->
+          <a class="btn btn--kakao btn--block btn--lg" href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">
+            카카오톡 입소상담 바로가기
+          </a>
+
+          <div class="contact-quick">
+            <a class="btn btn--outline" href="tel:0517519820">전화 상담</a>
+            <a class="btn btn--outline" href="#admission">입소대기 안내</a>
+          </div>
+
+          <!-- 블로그·인스타그램 -->
+          <ul class="sns sns--compact">
+            <li>
+              <a class="sns__btn sns__btn--blog" href="https://blog.naver.com/sungmo7519820" target="_blank" rel="noopener">
+                <span class="sns__ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M5 3h9l5 5v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm8 1.8V9h4.2L13 4.8zM7.5 12h9v1.6h-9V12zm0 3.4h9V17h-9v-1.6z"/></svg>
+                </span>
+                블로그
+              </a>
+            </li>
+            <li>
+              <a class="sns__btn sns__btn--insta" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">
+                <span class="sns__ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+                </span>
+                인스타그램
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 상담 신청 폼 : 작성 후 '상담 신청하기'를 누르면 메일 프로그램이 열립니다 -->
+        <form class="contact-form reveal reveal--delay" id="contactForm" novalidate>
+          <h3>온라인 입소상담 신청</h3>
+
+          <div class="field">
+            <label for="f-name">보호자 성함 <em>*</em></label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="예) 홍길동">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-phone">연락처 <em>*</em></label>
+              <input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="예) 010-0000-0000">
+            </div>
+            <div class="field">
+              <label for="f-birth">아이 생년월일</label>
+              <input type="text" id="f-birth" name="birth" placeholder="예) 2025-03">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-age">희망 반</label>
+              <select id="f-age" name="age">
+                <option value="상담 후 결정">상담 후 결정</option>
+                <option value="만 0세">만 0세</option>
+                <option value="만 1세">만 1세</option>
+                <option value="만 2세">만 2세</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-when">희망 입소 시기</label>
+              <input type="text" id="f-when" name="when" placeholder="예) 2026년 3월">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">문의 내용</label>
+            <textarea id="f-msg" name="message" rows="4" placeholder="궁금하신 점을 자유롭게 적어주세요."></textarea>
+          </div>
+
+          <div class="agree">
+            <input type="checkbox" id="f-agree" name="agree" required>
+            <label for="f-agree">상담을 위한 개인정보 수집·이용에 동의합니다. <em>*</em></label>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block">상담 신청하기</button>
+          <p class="form-help" id="formHelp" role="status" aria-live="polite">
+            버튼을 누르면 작성하신 내용이 메일 프로그램으로 전달됩니다.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 하단 배너 ===================== -->
+  <section class="cta-band">
+    <div class="container cta-band__inner reveal">
+      <h2>아이의 첫 어린이집,<br class="br-mo"> 성모영아전담어린이집과 함께해요</h2>
+      <p>언제든 편하게 문의해 주세요. 따뜻하게 맞이하겠습니다.</p>
+      <div class="cta-band__btns">
+        <a class="btn btn--kakao btn--lg" href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">카카오톡 입소상담</a>
+        <a class="btn btn--white btn--lg" href="#contact">문의하기</a>
+        <a class="btn btn--outline-white btn--lg" href="#admission">입소대기 안내</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== 푸터 ===================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <strong>성모영아전담어린이집</strong>
+      <p>작은 아이의 오늘을 소중히, 행복한 내일을 함께 준비합니다.</p>
+    </div>
+    <ul class="footer__info">
+      <li>주소 : 부산광역시 수영구 망미로7번길 17</li>
+      <li>전화 : 051-751-9820 / 010-9340-8331</li>
+      <li>이메일 : sungmo720@naver.com</li>
+      <li>운영시간 : 평일 07:30 ~ 19:30</li>
+    </ul>
+    <nav class="footer__nav" aria-label="하단 메뉴">
+      <a href="#intro">어린이집 소개</a>
+      <a href="#strength">우리 원의 장점</a>
+      <a href="#admission">입소안내</a>
+      <a href="#contact">상담 및 문의</a>
+    </nav>
+
+    <!-- 블로그·인스타그램·카카오톡 -->
+    <ul class="footer__sns">
+      <li><a href="https://blog.naver.com/sungmo7519820" target="_blank" rel="noopener">네이버 블로그</a></li>
+      <li><a href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">인스타그램</a></li>
+      <li><a href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">카카오톡 입소상담</a></li>
+    </ul>
+  </div>
+  <p class="footer__copy">&copy; <span id="year">2026</span> 성모영아전담어린이집. All rights reserved.</p>
+</footer>
+
+<!-- 모바일 하단 고정 상담 버튼 -->
+<div class="fab">
+  <a class="fab__btn fab__btn--line" href="tel:0517519820"><span aria-hidden="true">📞</span> 전화상담</a>
+  <a class="fab__btn fab__btn--kakao" href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> 카카오톡 상담</a>
+</div>
+
+<!-- 맨 위로 -->
+<button class="totop" id="toTop" type="button" aria-label="맨 위로 이동">↑</button>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

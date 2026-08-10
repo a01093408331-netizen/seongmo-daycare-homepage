@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="낮잠 공간 임시 이미지">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3ECF8"/>
+      <stop offset="100%" stop-color="#E6DAF1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="112" cy="128" r="104" fill="#ffffff" opacity="0.45"/>
+  <circle cx="704" cy="656" r="160" fill="#ffffff" opacity="0.35"/>
+  <circle cx="640" cy="144" r="56" fill="#ffffff" opacity="0.5"/>
+  <g transform="translate(400.0 328.0) scale(3.077)" fill="#B79BD4">
+    <path d="M0 40C-46 12-58-14-44-32c11-14 32-11 44 6 12-17 33-20 44-6 14 18 2 44-44 72z"/>
+  </g>
+  <text x="400.0" y="592.0" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="42" font-weight="700" fill="#8a7466">낮잠 공간</text>
+  <text x="400.0" y="648.7" text-anchor="middle" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" font-size="30" fill="#a8968a">사진을 넣어주세요</text>
+</svg>
