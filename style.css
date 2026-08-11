@@ -1022,3 +1022,28 @@ select:focus-visible, textarea:focus-visible {
   .pt-grid { grid-template-columns: 1fr; }
   .pt-cta .btn { width: 100%; }
 }
+
+/* ============ 인스타그램 바로가기 카드 ============ */
+.insta__go {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(160deg, var(--primary-soft), var(--white));
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 38px 24px;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.insta__go:hover { transform: translateY(-3px); box-shadow: var(--sh-md); }
+.insta__go-ico { display: block; font-size: 34px; margin-bottom: 12px; }
+.insta__go b { display: block; color: var(--ink); font-size: 18px; margin-bottom: 8px; }
+.insta__go-sub { display: block; color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.insta__go-btn {
+  display: inline-block;
+  background: var(--insta);
+  color: #fff;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-weight: 700;
+  font-size: 15px;
+}
