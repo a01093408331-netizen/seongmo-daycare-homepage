@@ -241,28 +241,6 @@
       .catch(function () { /* 파일을 못 읽어도 홈페이지는 그대로 동작합니다 */ });
   }
 
-  /* ---------- 7) 인스타그램 위젯 안전장치 ----------
-     위젯 서비스가 멈추거나 인터넷이 느려서 사진이 안 뜨는 경우,
-     빈 회색 상자 대신 인스타그램 바로가기 안내를 보여줍니다. */
-  var instaFrame = document.getElementById('instagramWidget');
-
-  if (instaFrame) {
-    window.setTimeout(function () {
-      var iframe = instaFrame.querySelector('iframe');
-      // 위젯이 정상이면 높이가 크게 늘어납니다. 그대로면 못 불러온 것으로 봅니다.
-      if (iframe && iframe.offsetHeight > 170) return;
-
-      instaFrame.innerHTML =
-        '<a class="insta__fallback" href="https://www.instagram.com/sungmo7519820/" ' +
-        'target="_blank" rel="noopener">' +
-          '<span class="insta__fallback-ico" aria-hidden="true">📷</span>' +
-          '<b>인스타그램에서 우리 원의 일상을 만나보세요</b>' +
-          '<span class="insta__fallback-sub">@sungmo7519820 바로가기</span>' +
-        '</a>';
-      instaFrame.classList.add('insta__frame--fallback');
-    }, 10000);
-  }
-
   /* ---------- 8) 올해 연도 자동 표시 ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
