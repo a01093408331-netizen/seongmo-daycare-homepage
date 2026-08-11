@@ -51,7 +51,7 @@ function nextPhoto(img) {
     "addressRegion": "부산광역시",
     "addressCountry": "KR"
   },
-  "openingHours": "Mo-Fr 07:30-19:30",
+  "openingHours": ["Mo-Fr 07:30-19:30", "Sa 09:00-13:30"],
   "sameAs": [
     "https://blog.naver.com/sungmo7519820",
     "https://www.instagram.com/sungmo7519820/"
@@ -191,7 +191,7 @@ function nextPhoto(img) {
       <div class="intro-grid">
         <div class="intro-media reveal">
           <!-- 사진 넣기 : about-01.jpg -->
-          <img src="assets/img/about-01.jpg" data-fallback="assets/img/about-01.png,assets/img/about-01.svg" onerror="nextPhoto(this)" alt="성모영아전담어린이집 소개 사진" width="1000" height="750" loading="lazy" decoding="async">
+          <img src="assets/img/about-01.jpg" data-fallback="assets/img/about-01.png,assets/img/about-01.svg" onerror="nextPhoto(this)" alt="선생님과 아이들이 요리활동을 하는 모습을 그린 수채화" width="1000" height="750" loading="lazy" decoding="async">
         </div>
 
         <div class="intro-body reveal reveal--delay">
@@ -518,7 +518,7 @@ function nextPhoto(img) {
             <dl class="adm-dl">
               <div><dt>모집 대상</dt><dd>만 0세 ~ 만 2세 영아</dd></div>
               <div><dt>모집 시기</dt><dd>수시 모집 (반별 정원 충족 시 대기)</dd></div>
-              <div><dt>운영 시간</dt><dd>평일 07:30 ~ 19:30</dd></div>
+              <div><dt>운영 시간</dt><dd>평일 07:30 ~ 19:30<br>토요일 09:00 ~ 13:30</dd></div>
               <div><dt>보육 형태</dt><dd>영아전담 어린이집</dd></div>
             </dl>
             <p class="adm-note">※ 정확한 모집 현황과 정원은 원으로 문의해 주세요.</p>
@@ -572,8 +572,8 @@ function nextPhoto(img) {
             <li><span aria-hidden="true">📞</span><div><b>전화</b><p><a href="tel:0517519820">051-751-9820</a></p></div></li>
             <li><span aria-hidden="true">📱</span><div><b>휴대전화</b><p><a href="tel:01093408331">010-9340-8331</a></p></div></li>
             <li><span aria-hidden="true">📍</span><div><b>주소</b><p>부산광역시 수영구 망미로7번길 17<br>
-              <a href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8%2017" target="_blank" rel="noopener">지도에서 보기 <span aria-hidden="true">↗</span></a></p></div></li>
-            <li><span aria-hidden="true">🕒</span><div><b>운영시간</b><p>평일 07:30 ~ 19:30 / 토·일·공휴일 휴원</p></div></li>
+              <a href="#map">아래 지도에서 보기 ↓</a></p></div></li>
+            <li><span aria-hidden="true">🕒</span><div><b>운영시간</b><p>평일 07:30 ~ 19:30<br>토요일 09:00 ~ 13:30</p></div></li>
             <li><span aria-hidden="true">✉️</span><div><b>이메일</b><p><a href="mailto:sungmo720@naver.com">sungmo720@naver.com</a></p></div></li>
             <li><span aria-hidden="true">💬</span><div><b>입소상담 채널</b><p><a href="https://open.kakao.com/o/sqlsD6Yd" target="_blank" rel="noopener">카카오톡 오픈채팅으로 상담하기</a></p></div></li>
           </ul>
@@ -661,6 +661,32 @@ function nextPhoto(img) {
           </p>
         </form>
       </div>
+
+      <!-- ===== 오시는 길 (구글 지도) =====
+           주소를 바꾸시려면 아래 주소 3곳의 '망미로7번길 17' 부분을 수정하세요. -->
+      <div class="map reveal" id="map">
+        <div class="map__frame">
+          <iframe
+            src="https://www.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%88%98%EC%98%81%EA%B5%AC+%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8+17&hl=ko&z=17&output=embed"
+            title="성모영아전담어린이집 위치 지도"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map__bar">
+          <div class="map__addr">
+            <span aria-hidden="true">📍</span>
+            <div>
+              <b>성모영아전담어린이집</b>
+              <p>부산광역시 수영구 망미로7번길 17</p>
+            </div>
+          </div>
+          <div class="map__links">
+            <a class="btn btn--primary btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%88%98%EC%98%81%EA%B5%AC+%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8+17" target="_blank" rel="noopener">길찾기</a>
+            <a class="btn btn--outline btn--sm" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8%2017" target="_blank" rel="noopener">네이버 지도</a>
+            <a class="btn btn--outline btn--sm" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%88%98%EC%98%81%EA%B5%AC%20%EB%A7%9D%EB%AF%B8%EB%A1%9C7%EB%B2%88%EA%B8%B8%2017" target="_blank" rel="noopener">카카오맵</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -690,7 +716,7 @@ function nextPhoto(img) {
       <li>주소 : 부산광역시 수영구 망미로7번길 17</li>
       <li>전화 : 051-751-9820 / 010-9340-8331</li>
       <li>이메일 : sungmo720@naver.com</li>
-      <li>운영시간 : 평일 07:30 ~ 19:30</li>
+      <li>운영시간 : 평일 07:30 ~ 19:30 / 토요일 09:00 ~ 13:30</li>
     </ul>
     <nav class="footer__nav" aria-label="하단 메뉴">
       <a href="#intro">어린이집 소개</a>
