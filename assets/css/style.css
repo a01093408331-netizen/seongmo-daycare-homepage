@@ -720,6 +720,30 @@ select:focus-visible, textarea:focus-visible {
 .form-help.is-error { color: #C9503A; font-weight: 700; }
 .form-help.is-ok { color: #4A8A6D; font-weight: 700; }
 
+/* ---- 오시는 길 (지도) ---- */
+.map {
+  margin-top: 34px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--sh-sm);
+  scroll-margin-top: calc(var(--header-h) + 20px);
+}
+.map__frame {
+  aspect-ratio: 21 / 9;
+  background: var(--sage-soft);
+  position: relative;
+}
+.map__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+
+.map__bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 20px 26px;
+}
+.map__addr { display: flex; align-items: flex-start; gap: 12px; }
+.map__addr > span { font-size: 20px; }
+.map__addr b { display: block; color: var(--ink); font-size: 16.5px; }
+.map__addr p { color: var(--muted); font-size: 15.5px; }
+.map__links { display: flex; flex-wrap: wrap; gap: 8px; }
+
 /* ============ 17. 하단 배너 ============ */
 .cta-band {
   padding: 84px 0;
@@ -883,6 +907,12 @@ select:focus-visible, textarea:focus-visible {
   .sns { justify-content: center; }
   .sns__btn { flex: 1; justify-content: center; padding: 12px 14px; }
 
+  /* 모바일 : 지도를 세로로 조금 더 크게 */
+  .map { border-radius: var(--r-md); }
+  .map__frame { aspect-ratio: 4 / 3; }
+  .map__bar { flex-direction: column; align-items: stretch; padding: 18px 18px 20px; }
+  .map__links .btn { flex: 1; justify-content: center; }
+
   .adm-box, .contact-form, .contact-info { padding: 26px 20px; border-radius: var(--r-md); }
   .adm-dl > div { grid-template-columns: 1fr; gap: 2px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
@@ -914,4 +944,81 @@ select:focus-visible, textarea:focus-visible {
   .header, .mnav, .fab, .totop, .cta-band { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
   body { background: #fff; }
+}
+
+/* ============ 시간제보육 섹션 ============ */
+.pt-need {
+  background: var(--sky-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 30px 26px;
+  margin-bottom: 34px;
+}
+.pt-need__title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--ink);
+}
+.pt-need__list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.pt-need__list li {
+  background: var(--white);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-sm);
+  padding: 20px 10px;
+  text-align: center;
+}
+.pt-need__ico {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.pt-need__list b { color: var(--ink); font-size: 15px; }
+
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.pt-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-sm);
+  padding: 26px 22px;
+}
+.pt-card__ico {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: var(--r-xs);
+  background: var(--primary-soft);
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.pt-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--ink); }
+.pt-card p { margin: 0; color: var(--body); }
+.pt-card__sub { margin-top: 8px !important; font-size: 14px; color: var(--muted); }
+
+.pt-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .pt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pt-need__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .pt-grid { grid-template-columns: 1fr; }
+  .pt-cta .btn { width: 100%; }
 }
