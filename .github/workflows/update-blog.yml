@@ -1,0 +1,47 @@
+yaml
+name: 블로그 새 글 가져오기
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch_blog.py"
+      - ".github/workflows/update-blog.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-blog
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 블로그 글 가져오기
+        run: python scripts/fetch_blog.py
+
+      - name: 바뀐 내용이 있으면 저장
+        run: |
+          if [ -n "$(git status --porcelain assets/data/blog.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/data/blog.json
+            git commit -m "블로그 새 글 반영"
+            git push
+            echo "새 글을 홈페이지에 반영했습니다."
+          else
+            echo "새로운 글이 없습니다."
+          fi
