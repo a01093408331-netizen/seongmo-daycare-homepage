@@ -336,6 +336,53 @@ select:focus-visible, textarea:focus-visible {
 }
 .intro-media img { width: 100%; height: 100%; object-fit: cover; }
 
+/* ---- 원장 인사말 ---- */
+.greeting {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 44px;
+  align-items: center;
+  margin-top: 64px;
+  padding: 40px 44px;
+  background: linear-gradient(140deg, var(--cream) 0%, #FFF8F3 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.greeting__photo {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--primary-soft);
+  box-shadow: var(--sh-md);
+}
+.greeting__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.greeting__eyebrow {
+  color: var(--primary); font-weight: 800; font-size: 14px;
+  letter-spacing: .02em; margin-bottom: 8px;
+}
+.greeting__title { font-size: clamp(21px, 2.4vw, 28px); margin-bottom: 16px; line-height: 1.4; }
+.greeting__body > p { color: var(--body); margin-bottom: 12px; }
+.greeting__body b { color: var(--ink); }
+.greeting__creds {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin: 18px 0 16px; padding: 0; list-style: none;
+}
+.greeting__creds li {
+  padding: 6px 13px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--line);
+  font-size: 13.5px; font-weight: 700; color: var(--body);
+}
+.greeting__sign { color: var(--ink); font-size: 15.5px; margin-bottom: 0 !important; }
+.greeting__sign b { font-size: 17px; }
+
+@media (max-width: 1024px) {
+  .greeting { grid-template-columns: 240px 1fr; gap: 32px; padding: 32px; }
+}
+@media (max-width: 720px) {
+  .greeting { grid-template-columns: 1fr; gap: 24px; padding: 24px 20px; margin-top: 44px; }
+  .greeting__photo { max-width: 240px; margin: 0 auto; }
+}
+
 .intro-body__title { font-size: clamp(21px, 2.4vw, 27px); margin-bottom: 14px; }
 .intro-body > p { color: var(--body); }
 .intro-body b { color: var(--ink); }
