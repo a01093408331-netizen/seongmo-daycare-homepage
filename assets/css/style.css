@@ -180,8 +180,7 @@ select:focus-visible, textarea:focus-visible {
   border-radius: 50%;
   background: #fff;
 }
-.logo__fallback { display: none; }     /* 로고 파일이 없을 때만 하트가 나옵니다 */
-.logo__mark.is-fallback .logo__fallback { display: block; margin: auto; }
+.logo__mark svg { display: none; }     /* 옛 하트 그림이 남아 있어도 보이지 않게 */
 .logo__text { display: flex; flex-direction: column; line-height: 1.2; }
 .logo__text strong { font-size: 18px; color: var(--ink); letter-spacing: -0.03em; }
 .logo__text em { font-style: normal; font-size: 11.5px; color: var(--muted); letter-spacing: 0; }
