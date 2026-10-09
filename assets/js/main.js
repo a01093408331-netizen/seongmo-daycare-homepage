@@ -205,33 +205,59 @@
     });
   }
 
-  /* 블로그 썸네일을 못 불러왔을 때
-     ① 다른 주소로 한 번 더 시도 → ② 그래도 안 되면 잎사귀 그림으로 대체 */
-  window.newsThumbFail = function (img) {
-    var next = img.getAttribute('data-fallback');
-    if (next) {
-      img.removeAttribute('data-fallback');
-      img.src = next;
-      return;
+  /* 블로그 사진 주소 후보 만들기
+     네이버 사진 주소는 끝의 ?type= 값에 따라 크기가 달라집니다.
+     큰 사진 → 중간 사진 → 원본 순서로 차례대로 시도해 봅니다. */
+  function thumbCandidates(p) {
+    var list = [];
+    function add(u) {
+      if (u && list.indexOf(u) === -1) list.push(u);
     }
-    var box = img.parentNode;
-    if (box) box.className = 'news__thumb news__thumb--empty';
-    img.remove();
-  };
+    var base = p.image || p.imageAlt || '';
+    if (!base) return list;
+    add(base);
+    if (/\?type=/.test(base)) {
+      add(base.replace(/\?type=[^&#]*/, '?type=w773'));
+      add(base.replace(/\?type=[^&#]*/, '?type=w210'));
+      add(base.replace(/\?type=[^&#]*/, ''));
+    }
+    add(p.imageAlt);
+    return list;
+  }
+
+  /* 후보 주소를 차례로 시도하고, 모두 실패하면 잎사귀 그림으로 대체합니다. */
+  function attachThumb(img, candidates) {
+    var i = 0;
+    img.addEventListener('error', function () {
+      i += 1;
+      if (i < candidates.length) {
+        img.src = candidates[i];
+        return;
+      }
+      var box = img.parentNode;                     // 지우기 전에 먼저 찾아둡니다
+      if (box) box.className = 'news__thumb news__thumb--empty';
+      img.remove();
+    });
+    img.src = candidates[0];
+  }
 
   function renderNews(data) {
     if (!newsBlock || !newsList) return;
     var posts = (data && data.posts) || [];
     if (!posts.length) { newsBlock.hidden = true; return; }
 
+    var chains = [];
     newsList.innerHTML = posts.map(function (p) {
-      var thumb = p.image
-        ? '<div class="news__thumb"><img src="' + escapeHtml(p.image) + '" alt="" loading="lazy" ' +
-          'referrerpolicy="no-referrer" decoding="async"' +
-          (p.imageAlt && p.imageAlt !== p.image
-            ? ' data-fallback="' + escapeHtml(p.imageAlt) + '"' : '') +
-          ' onerror="newsThumbFail(this)"></div>'
-        : '<div class="news__thumb news__thumb--empty"></div>';
+      var cands = thumbCandidates(p);
+      var thumb;
+      if (cands.length) {
+        chains.push(cands);
+        thumb = '<div class="news__thumb"><img alt="" loading="lazy" ' +
+                'referrerpolicy="no-referrer" decoding="async" ' +
+                'data-thumb="' + (chains.length - 1) + '"></div>';
+      } else {
+        thumb = '<div class="news__thumb news__thumb--empty"></div>';
+      }
       return '<li class="news__item">' +
         '<a href="' + escapeHtml(p.link) + '" target="_blank" rel="noopener">' +
           thumb +
@@ -242,6 +268,11 @@
           '</div>' +
         '</a></li>';
     }).join('');
+
+    // 사진 불러오기 시작 (실패하면 다음 주소로 자동 재시도)
+    newsList.querySelectorAll('img[data-thumb]').forEach(function (img) {
+      attachThumb(img, chains[Number(img.getAttribute('data-thumb'))]);
+    });
 
     var up = document.getElementById('newsUpdated');
     if (up && data.updated) up.textContent = '마지막 확인 : ' + data.updated;
