@@ -445,14 +445,16 @@ function nextPhoto(img) {
         <p class="news__updated" id="newsUpdated"></p>
       </div>
 
-      <!-- ===== 인스타그램 최신 게시물 (자동으로 채워집니다) =====
-           위젯을 바꾸시려면 아래 <iframe> 한 줄만 새 코드로 교체하세요. -->
+      <!-- ===== 인스타그램 소식 =====
+           보여줄 게시물은 assets/data/insta.json 파일에 주소만 넣으면 됩니다.
+           주소가 하나도 없으면 아래 '바로가기' 안내가 그대로 나옵니다. -->
       <div class="insta reveal">
         <div class="news__head">
           <h3>인스타그램 소식</h3>
           <a class="btn btn--outline btn--sm" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">인스타그램 팔로우 <span aria-hidden="true">↗</span></a>
         </div>
-        <a class="insta__go" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">
+        <div class="insta__grid" id="instaGrid" hidden></div>
+        <a class="insta__go" id="instaGo" href="https://www.instagram.com/sungmo7519820/" target="_blank" rel="noopener">
           <span class="insta__go-ico" aria-hidden="true">📷</span>
           <b>인스타그램에서 우리 원의 일상을 만나보세요</b>
           <span class="insta__go-sub">아이들의 놀이, 활동, 행사 소식을 사진으로 전해드립니다</span>

@@ -586,6 +586,33 @@ select:focus-visible, textarea:focus-visible {
 .news__updated { margin-top: 16px; text-align: right; font-size: 13px; color: var(--muted); }
 /* ---- 인스타그램 위젯 ---- */
 .insta { margin-top: 46px; }
+
+/* 인스타그램 게시물 3칸 (가로로 나란히, 모바일에서는 한 줄씩) */
+.insta__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.insta__cell {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-sm);
+  min-height: 420px;          /* 불러오는 중에도 화면이 흔들리지 않게 */
+}
+.insta__cell iframe {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+}
+@media (max-width: 1024px) {
+  .insta__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .insta__grid { grid-template-columns: 1fr; }
+}
 .insta__frame {
   border-radius: var(--r-lg);
   overflow: hidden;

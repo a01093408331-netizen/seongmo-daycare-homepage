@@ -288,6 +288,41 @@
       .catch(function () { /* 파일을 못 읽어도 홈페이지는 그대로 동작합니다 */ });
   }
 
+  /* ---------- 7) 인스타그램 소식 ----------
+     assets/data/insta.json 에 게시물 주소를 넣으면 이 자리에 나타납니다.
+     비어 있으면 '인스타그램 바로가기' 안내가 그대로 보입니다. */
+  var instaGrid = document.getElementById('instaGrid');
+  var instaGo   = document.getElementById('instaGo');
+
+  /* 인스타그램 주소에서 게시물 번호만 뽑아냅니다 (p / reel / tv 모두 가능) */
+  function instaEmbedUrl(url) {
+    var m = String(url || '').match(/instagram\.com\/(?:p|reel|reels|tv)\/([A-Za-z0-9_-]+)/);
+    return m ? 'https://www.instagram.com/p/' + m[1] + '/embed/' : '';
+  }
+
+  function renderInsta(data) {
+    if (!instaGrid) return;
+    var urls = ((data && data.posts) || [])
+      .map(instaEmbedUrl)
+      .filter(Boolean)
+      .slice(0, 3);
+    if (!urls.length) return;                 // 그대로 안내 화면 유지
+
+    instaGrid.innerHTML = urls.map(function (u) {
+      return '<div class="insta__cell"><iframe src="' + u + '" loading="lazy" ' +
+             'title="인스타그램 게시물" scrolling="no" allowtransparency="true"></iframe></div>';
+    }).join('');
+    instaGrid.hidden = false;
+    if (instaGo) instaGo.hidden = true;
+  }
+
+  if (instaGrid && window.fetch) {
+    fetch('assets/data/insta.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(renderInsta)
+      .catch(function () { /* 파일이 없어도 홈페이지는 그대로 동작합니다 */ });
+  }
+
   /* ---------- 8) 올해 연도 자동 표시 ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
