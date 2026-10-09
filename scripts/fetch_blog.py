@@ -49,14 +49,15 @@ def strip_tags(html):
 def first_image(html):
     m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html or "", re.I)
     if not m:
-        return ""
+        return "", ""
     src = m.group(1)
     if src.startswith("//"):
         src = "https:" + src
-    # 네이버 썸네일 옵션(작게·흐리게)을 홈페이지용 크기로 바꿉니다.
-    # 예) ?type=w80_blur → ?type=w773
-    src = re.sub(r"\?type=[^&#]*", "?type=w773", src)
-    return src
+    # 네이버 썸네일은 주소 뒤 ?type= 값에 따라 크기가 정해집니다.
+    # 작게/흐리게 나오는 값이면 큰 크기로 바꿔 보되,
+    # 서버가 그 값을 지원하지 않을 수 있으므로 원본 주소도 함께 돌려줍니다.
+    big = re.sub(r"\?type=[^&#]*", "?type=w773", src)
+    return big, src
 
 
 def parse_date(value):
@@ -99,12 +100,14 @@ def collect():
             if not title or not link:
                 continue
             body = get("description")
+            img_big, img_src = first_image(body)
             summary = strip_tags(body)
             posts.append({
                 "title": title[:80],
                 "link": link,
                 "date": parse_date(get("pubDate")),
-                "image": first_image(body),
+                "image": img_big,
+                "imageAlt": img_src,
                 "summary": (summary[:90] + "…") if len(summary) > 90 else summary,
             })
             if len(posts) >= MAX_POSTS:

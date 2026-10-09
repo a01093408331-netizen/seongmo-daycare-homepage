@@ -205,6 +205,20 @@
     });
   }
 
+  /* 블로그 썸네일을 못 불러왔을 때
+     ① 다른 주소로 한 번 더 시도 → ② 그래도 안 되면 잎사귀 그림으로 대체 */
+  window.newsThumbFail = function (img) {
+    var next = img.getAttribute('data-fallback');
+    if (next) {
+      img.removeAttribute('data-fallback');
+      img.src = next;
+      return;
+    }
+    var box = img.parentNode;
+    if (box) box.className = 'news__thumb news__thumb--empty';
+    img.remove();
+  };
+
   function renderNews(data) {
     if (!newsBlock || !newsList) return;
     var posts = (data && data.posts) || [];
@@ -213,8 +227,10 @@
     newsList.innerHTML = posts.map(function (p) {
       var thumb = p.image
         ? '<div class="news__thumb"><img src="' + escapeHtml(p.image) + '" alt="" loading="lazy" ' +
-          'referrerpolicy="no-referrer" decoding="async" ' +
-          'onerror="this.remove();this.parentNode.className=\'news__thumb news__thumb--empty\'"></div>'
+          'referrerpolicy="no-referrer" decoding="async"' +
+          (p.imageAlt && p.imageAlt !== p.image
+            ? ' data-fallback="' + escapeHtml(p.imageAlt) + '"' : '') +
+          ' onerror="newsThumbFail(this)"></div>'
         : '<div class="news__thumb news__thumb--empty"></div>';
       return '<li class="news__item">' +
         '<a href="' + escapeHtml(p.link) + '" target="_blank" rel="noopener">' +
