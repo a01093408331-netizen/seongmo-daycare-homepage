@@ -225,20 +225,42 @@
     return list;
   }
 
-  /* 후보 주소를 차례로 시도하고, 모두 실패하면 잎사귀 그림으로 대체합니다. */
+  /* 후보 주소를 차례로 시도하고, 모두 실패하면 잎사귀 그림으로 대체합니다.
+     사진 서버가 응답도 오류도 주지 않고 멈춰 있는 경우가 있어서,
+     4초 안에 안 나오면 실패로 보고 다음 주소로 넘어갑니다. */
+  var THUMB_WAIT = 4000;
+
   function attachThumb(img, candidates) {
     var i = 0;
-    img.addEventListener('error', function () {
-      i += 1;
-      if (i < candidates.length) {
-        img.src = candidates[i];
-        return;
-      }
+    var timer = null;
+    var step = 0;                                   // 몇 번째 시도인지 (늦은 응답 무시용)
+
+    function clearTimer() {
+      if (timer) { window.clearTimeout(timer); timer = null; }
+    }
+
+    function giveUp() {
+      clearTimer();
       var box = img.parentNode;                     // 지우기 전에 먼저 찾아둡니다
       if (box) box.className = 'news__thumb news__thumb--empty';
       img.remove();
-    });
-    img.src = candidates[0];
+    }
+
+    function tryNext(from) {
+      if (from !== step) return;                    // 지나간 시도의 뒤늦은 응답은 무시
+      clearTimer();
+      step += 1;
+      if (i >= candidates.length) { giveUp(); return; }
+      var url = candidates[i];
+      i += 1;
+      var mine = step;
+      timer = window.setTimeout(function () { tryNext(mine); }, THUMB_WAIT);
+      img.src = url;
+    }
+
+    img.addEventListener('load', clearTimer);
+    img.addEventListener('error', function () { tryNext(step); });
+    tryNext(0);
   }
 
   function renderNews(data) {
