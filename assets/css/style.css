@@ -685,6 +685,21 @@ select:focus-visible, textarea:focus-visible {
 .contact-quick { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
 .contact-quick .btn { flex: 1; }
 
+/* ---- 육아 정보 도우미 ---- */
+.helper {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 14px; padding: 16px 18px;
+  background: linear-gradient(140deg, var(--sage-soft) 0%, #F2F9F5 100%);
+  border: 1.5px solid #D5E9DE; border-radius: var(--r-md);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.helper:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: var(--sage); }
+.helper__ico { font-size: 26px; line-height: 1; }
+.helper__text { flex: 1; }
+.helper__text b { display: block; color: var(--ink); font-size: 16.5px; }
+.helper__text em { font-style: normal; display: block; margin-top: 2px; font-size: 14.5px; color: var(--muted); }
+.helper__go { color: #4A8A6D; font-size: 18px; font-weight: 800; }
+
 .contact-form {
   background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
   padding: 34px 32px; box-shadow: var(--sh-md);
