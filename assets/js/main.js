@@ -300,12 +300,49 @@
     return m ? 'https://www.instagram.com/p/' + m[1] + '/embed/' : '';
   }
 
+  /* 사진이 있는 게시물은 우리 홈페이지 디자인의 사진 카드로 보여줍니다 */
+  function instaCard(p) {
+    return '<a class="insta__card" href="' + escapeHtml(p.link) + '" target="_blank" rel="noopener">' +
+      '<span class="insta__photo"><img alt="" loading="lazy" decoding="async" ' +
+        'referrerpolicy="no-referrer" src="' + escapeHtml(p.image) + '"></span>' +
+      '<span class="insta__caption">' +
+        (p.date ? '<em>' + escapeHtml(p.date) + '</em>' : '') +
+        escapeHtml(p.caption || '인스타그램에서 보기') +
+      '</span></a>';
+  }
+
   function renderInsta(data) {
     if (!instaGrid) return;
-    var urls = ((data && data.posts) || [])
-      .map(instaEmbedUrl)
-      .filter(Boolean)
-      .slice(0, 3);
+    var posts = (data && data.posts) || [];
+
+    // ① 사진 정보까지 들어 있는 경우 → 사진 카드 6개
+    var cards = posts.filter(function (p) {
+      return p && typeof p === 'object' && p.image && p.link;
+    }).slice(0, 6);
+
+    if (cards.length) {
+      instaGrid.className = 'insta__grid insta__grid--cards';
+      instaGrid.innerHTML = cards.map(instaCard).join('');
+      // 사진을 못 불러오면 그 카드만 조용히 숨깁니다
+      instaGrid.querySelectorAll('img').forEach(function (img) {
+        img.addEventListener('error', function () {
+          var card = img.closest('.insta__card');
+          if (card) card.hidden = true;
+          if (!instaGrid.querySelector('.insta__card:not([hidden])')) {
+            instaGrid.hidden = true;
+            if (instaGo) instaGo.hidden = false;
+          }
+        });
+      });
+      instaGrid.hidden = false;
+      if (instaGo) instaGo.hidden = true;
+      return;
+    }
+
+    // ② 게시물 주소만 적어 둔 경우 → 인스타그램 공식 보기창 3개
+    var urls = posts.map(function (p) {
+      return instaEmbedUrl(typeof p === 'string' ? p : (p && p.link));
+    }).filter(Boolean).slice(0, 3);
     if (!urls.length) return;                 // 그대로 안내 화면 유지
 
     instaGrid.innerHTML = urls.map(function (u) {

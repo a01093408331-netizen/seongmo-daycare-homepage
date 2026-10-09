@@ -1,4 +1,4 @@
-name: 블로그 새 글 가져오기
+name: 블로그·인스타그램 새 글 가져오기
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_blog.py"
+      - "scripts/fetch_insta.py"
       - ".github/workflows/update-blog.yml"
 
 permissions:
@@ -32,13 +33,34 @@ jobs:
       - name: 블로그 글 가져오기
         run: python scripts/fetch_blog.py
 
+      # 인스타그램은 2시간에 한 번만 가져옵니다
+      # (무료 플랜의 사용 횟수 제한에 걸리지 않게 하기 위해서입니다)
+      - name: 인스타그램 차례인지 확인
+        id: insta_turn
+        run: |
+          hour=$((10#$(date -u +%H)))
+          minute=$((10#$(date -u +%M)))
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"     # 직접 실행했을 때는 항상
+          elif [ $((hour % 2)) -eq 0 ] && [ "$minute" -lt 30 ]; then
+            echo "run=yes" >> "$GITHUB_OUTPUT"     # 2시간에 한 번
+          else
+            echo "run=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 인스타그램 게시물 가져오기
+        if: steps.insta_turn.outputs.run == 'yes'
+        env:
+          BEHOLD_FEED_URL: ${{ secrets.BEHOLD_FEED_URL }}
+        run: python scripts/fetch_insta.py
+
       - name: 바뀐 내용이 있으면 저장
         run: |
-          if [ -n "$(git status --porcelain assets/data/blog.json)" ]; then
+          if [ -n "$(git status --porcelain assets/data)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add assets/data/blog.json
-            git commit -m "블로그 새 글 반영"
+            git add assets/data
+            git commit -m "블로그·인스타그램 새 글 반영"
             git push
             echo "새 글을 홈페이지에 반영했습니다."
           else
