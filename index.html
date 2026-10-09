@@ -42,6 +42,18 @@ function nextPhoto(img) {
   img.setAttribute('data-fallback', list.join(','));
   if (next) { img.src = next; } else { img.onerror = null; }
 }
+
+/* 로고 그림을 못 찾으면 하트 그림으로 돌아갑니다 */
+function logoFail(img) {
+  var list = (img.getAttribute('data-fallback') || '').split(',').filter(Boolean);
+  var next = list.shift();
+  img.setAttribute('data-fallback', list.join(','));
+  if (next) { img.src = next; return; }
+  img.onerror = null;
+  img.remove();
+  var mark = document.getElementById('logoMark');
+  if (mark) mark.classList.add('is-fallback');
+}
 </script>
 
 <!-- 네이버·구글 검색에서 어린이집 정보가 잘 나오도록 돕는 부분입니다 (화면에는 보이지 않습니다) -->
@@ -77,8 +89,14 @@ function nextPhoto(img) {
   <div class="container header__inner">
 
     <a class="logo" href="#home" aria-label="성모영아전담어린이집 홈으로">
-      <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" width="38" height="38">
+      <span class="logo__mark" id="logoMark" aria-hidden="true">
+        <!-- 어린이집 로고.
+             바꾸시려면 assets/img/logo.png 를 같은 이름으로 덮어쓰세요.
+             로고 파일이 없으면 아래 하트 그림이 대신 나옵니다. -->
+        <img class="logo__img" src="assets/img/logo.png"
+             data-fallback="assets/img/logo-auto.png,assets/img/logo-auto.webp,assets/img/logo.jpg"
+             onerror="logoFail(this)" alt="" width="40" height="40" decoding="async">
+        <svg class="logo__fallback" viewBox="0 0 48 48" width="38" height="38">
           <circle cx="24" cy="24" r="24" fill="#F2A18B"/>
           <path d="M24 35c-12-7.4-15.2-14.3-11.5-19 2.9-3.7 8.4-2.9 11.5 1.6 3.1-4.5 8.6-5.3 11.5-1.6C39.2 20.7 36 27.6 24 35z" fill="#fff"/>
         </svg>

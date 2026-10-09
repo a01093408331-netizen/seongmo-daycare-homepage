@@ -101,8 +101,40 @@ def date_of(post):
     return dt.strftime("%Y.%m.%d")
 
 
+LOGO_DIR = "assets/img"
+LOGO_NAMES = ("logo-auto.png", "logo-auto.webp", "logo-auto.jpg")
+
+
+def save_logo(url):
+    """인스타그램 프로필 사진(어린이집 로고)을 한 번만 내려받습니다.
+
+    이미 파일이 있으면 그대로 둡니다. 더 좋은 로고를 직접 올리셨을 때
+    자동으로 덮어쓰지 않기 위해서입니다.
+    """
+    if not url:
+        return
+    if any(os.path.exists(os.path.join(LOGO_DIR, n)) for n in LOGO_NAMES):
+        return
+    ext = ".webp" if ".webp" in url.lower() else (".jpg" if ".jpg" in url.lower() else ".png")
+    logo_path = os.path.join(LOGO_DIR, "logo-auto" + ext)
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "Mozilla/5.0 (compatible; SeongmoDaycareBot/1.0)"}
+        )
+        with urllib.request.urlopen(req, timeout=20) as res:
+            raw = res.read()
+        os.makedirs(LOGO_DIR, exist_ok=True)
+        with open(logo_path, "wb") as f:
+            f.write(raw)
+        print("로고를 저장했습니다:", logo_path)
+    except Exception as exc:              # 로고를 못 받아도 홈페이지는 그대로 동작합니다
+        print("로고를 내려받지 못했습니다:", exc)
+
+
 def collect(feed_url):
     data = fetch(feed_url)
+    if isinstance(data, dict):
+        save_logo(pick(data, "profilePictureUrl", "profile_picture_url"))
     raw = data if isinstance(data, list) else (data.get("posts") or data.get("data") or [])
 
     posts = []

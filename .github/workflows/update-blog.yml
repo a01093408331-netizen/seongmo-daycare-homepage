@@ -56,10 +56,10 @@ jobs:
 
       - name: 바뀐 내용이 있으면 저장
         run: |
-          if [ -n "$(git status --porcelain assets/data)" ]; then
+          if [ -n "$(git status --porcelain assets/data assets/img)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add assets/data
+            git add assets/data assets/img
             git commit -m "블로그·인스타그램 새 글 반영"
             git push
             echo "새 글을 홈페이지에 반영했습니다."
