@@ -47,19 +47,14 @@ def pick(d, *names):
 
 
 def image_of(post):
-    """게시물에서 사진 주소를 찾습니다. 동영상이면 미리보기 사진을 씁니다."""
-    kind = pick(post, "mediaType", "media_type").upper()
-    if kind == "VIDEO":
-        # 동영상 파일은 사진으로 보여줄 수 없으므로 미리보기 사진만 씁니다
-        order = ("thumbnailUrl", "thumbnail_url")
-    else:
-        order = ("mediaUrl", "media_url", "thumbnailUrl", "thumbnail_url")
-    direct = pick(post, *order)
-    if direct:
-        return direct
+    """게시물에서 사진 주소를 찾습니다.
+
+    behold 가 만들어 주는 정사각형 사진(sizes)을 가장 먼저 씁니다.
+    인스타그램이 직접 주는 주소는 며칠 뒤 만료되어 사진이 깨지기 때문입니다.
+    """
     sizes = post.get("sizes")
     if isinstance(sizes, dict):
-        for key in ("medium", "small", "large", "full"):
+        for key in ("medium", "large", "small", "full"):
             item = sizes.get(key)
             if isinstance(item, dict):
                 got = pick(item, "mediaUrl", "media_url", "url", "src")
@@ -67,13 +62,24 @@ def image_of(post):
                     return got
             elif isinstance(item, str) and item.strip():
                 return item.strip()
-    return ""
+
+    kind = pick(post, "mediaType", "media_type").upper()
+    if kind == "VIDEO":
+        # 동영상 파일은 사진으로 보여줄 수 없으므로 미리보기 사진만 씁니다
+        return pick(post, "thumbnailUrl", "thumbnail_url")
+    return pick(post, "mediaUrl", "media_url", "thumbnailUrl", "thumbnail_url")
 
 
 def clean_caption(text):
+    """글의 첫 문단만 뽑아 한 줄로 만듭니다 (해시태그 제외)."""
     text = re.sub(r"#\S+", " ", text or "")          # 해시태그는 빼고 보여줍니다
-    text = re.sub(r"\s+", " ", text).strip()
-    return (text[:70] + "…") if len(text) > 70 else text
+    first = ""
+    for block in re.split(r"\n\s*\n", text):         # 빈 줄 기준으로 문단 나누기
+        block = re.sub(r"\s+", " ", block).strip()
+        if block:
+            first = block
+            break
+    return (first[:80] + "…") if len(first) > 80 else first
 
 
 def date_of(post):
@@ -104,7 +110,7 @@ def collect(feed_url):
         posts.append({
             "link": link,
             "image": image,
-            "caption": clean_caption(pick(item, "caption", "text")),
+            "caption": clean_caption(pick(item, "prunedCaption", "caption", "text")),
             "date": date_of(item),
         })
         if len(posts) >= MAX_POSTS:
