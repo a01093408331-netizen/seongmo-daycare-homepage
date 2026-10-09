@@ -234,32 +234,54 @@
     var i = 0;
     var timer = null;
     var step = 0;                                   // 몇 번째 시도인지 (늦은 응답 무시용)
+    var visible = false;                            // 화면에 들어왔는지
+    var done = false;
 
     function clearTimer() {
       if (timer) { window.clearTimeout(timer); timer = null; }
     }
 
+    function finish() { done = true; clearTimer(); }
+
     function giveUp() {
-      clearTimer();
+      finish();
       var box = img.parentNode;                     // 지우기 전에 먼저 찾아둡니다
       if (box) box.className = 'news__thumb news__thumb--empty';
       img.remove();
     }
 
+    /* 사진은 화면에 들어올 때 비로소 불러오기 시작합니다(절약).
+       그래서 화면 밖에 있는 동안에는 시간을 재지 않습니다. */
+    function arm() {
+      if (done || !visible || timer) return;
+      var mine = step;
+      timer = window.setTimeout(function () { timer = null; tryNext(mine); }, THUMB_WAIT);
+    }
+
     function tryNext(from) {
-      if (from !== step) return;                    // 지나간 시도의 뒤늦은 응답은 무시
+      if (done || from !== step) return;            // 지나간 시도의 뒤늦은 응답은 무시
       clearTimer();
       step += 1;
       if (i >= candidates.length) { giveUp(); return; }
-      var url = candidates[i];
+      img.src = candidates[i];
       i += 1;
-      var mine = step;
-      timer = window.setTimeout(function () { tryNext(mine); }, THUMB_WAIT);
-      img.src = url;
+      arm();
     }
 
-    img.addEventListener('load', clearTimer);
+    img.addEventListener('load', finish);
     img.addEventListener('error', function () { tryNext(step); });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { visible = true; io.disconnect(); arm(); }
+        });
+      }, { rootMargin: '250px' });
+      io.observe(img);
+    } else {
+      visible = true;
+    }
+
     tryNext(0);
   }
 
