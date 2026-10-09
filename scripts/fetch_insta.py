@@ -20,6 +20,12 @@ from datetime import datetime, timezone, timedelta
 MAX_POSTS = 6                       # 홈페이지에 보여줄 게시물 개수
 PROFILE_URL = "https://www.instagram.com/sungmo7519820/"
 OUT_PATH = "assets/data/insta.json"
+
+# behold.so 에서 만든 피드 주소입니다.
+# 읽기 전용이라 이 주소로는 게시물을 보는 것만 가능하고,
+# 인스타그램 계정에는 아무 영향을 줄 수 없습니다.
+# 피드를 새로 만드셨다면 이 주소만 바꾸시면 됩니다.
+DEFAULT_FEED_URL = "https://feeds.behold.so/URPuOo6Sh5ZIehk2y905"
 # ────────────────────────────────────────────────────
 
 KST = timezone(timedelta(hours=9))
@@ -119,9 +125,9 @@ def collect(feed_url):
 
 
 def main():
-    feed_url = (os.environ.get("BEHOLD_FEED_URL") or "").strip()
+    feed_url = (os.environ.get("BEHOLD_FEED_URL") or "").strip() or DEFAULT_FEED_URL
     if not feed_url:
-        print("BEHOLD_FEED_URL 이 설정되어 있지 않아 인스타그램 가져오기를 건너뜁니다.")
+        print("피드 주소가 없어 인스타그램 가져오기를 건너뜁니다.")
         return 0
 
     try:
