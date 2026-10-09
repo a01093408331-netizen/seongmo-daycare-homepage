@@ -15,7 +15,7 @@ from datetime import datetime, timezone, timedelta
 from xml.etree import ElementTree
 
 # ── 설정 ─────────────────────────────────────────────
-BLOG_ID = "sungmo7519820"          # 네이버 블로그 아이디
+BLOG_ID = "sungmo7519820_"          # 네이버 블로그 아이디
 MAX_POSTS = 6                       # 홈페이지에 보여줄 글 개수
 OUT_PATH = "assets/data/blog.json"
 # ────────────────────────────────────────────────────

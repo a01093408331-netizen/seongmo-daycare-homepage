@@ -94,7 +94,7 @@ seongmo-daycare-homepage/
 | 이메일 | sungmo720@naver.com |
 | 주소 | 부산광역시 수영구 망미로7번길 17 |
 | 운영시간 | 평일 07:30 ~ 19:30 |
-| 네이버 블로그 | https://blog.naver.com/sungmo7519820 |
+| 네이버 블로그 | https://blog.naver.com/sungmo7519820_ |
 | 인스타그램 | https://www.instagram.com/sungmo7519820/ |
 | 카카오톡 입소상담 | https://open.kakao.com/o/sqlsD6Yd |
 
@@ -242,7 +242,7 @@ GitHub 이 **30분마다** 블로그를 확인해서 새 글을 홈페이지로 
 `scripts/fetch_blog.py` 파일 맨 위의 이 부분만 바꾸면 됩니다.
 
 ```python
-BLOG_ID = "sungmo7519820"
+BLOG_ID = "sungmo7519820_"
 ```
 
 ---
