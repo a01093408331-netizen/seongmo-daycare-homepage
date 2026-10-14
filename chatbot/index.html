@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>양육상담 챗봇으로 이동 중</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+<style>
+  :root { --bg:#F4FAEC; --ink:#2F4A2A; --accent:#3E8E3A; --muted:#6B7F66; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:var(--bg); color:var(--ink); padding:16px;
+         font-family:-apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; text-align:center; }
+  .card { max-width:360px; }
+  .sprout { font-size:56px; animation:bob 1.2s ease-in-out infinite; }
+  @keyframes bob { 50% { transform:translateY(-6px); } }
+  h1 { font-size:20px; margin:12px 0 6px; }
+  p { color:var(--muted); font-size:15px; margin:0 0 20px; line-height:1.5; }
+  a.btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+          padding:12px 22px; border-radius:999px; font-weight:700; }
+</style>
+<!-- Vercel Web Analytics: 접속 횟수 집계 (이름 등 개인정보는 수집하지 않음) -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div class="card">
+  <div class="sprout">🌱</div>
+  <h1>성모영아전담어린이집<br>양육상담 챗봇으로 이동합니다</h1>
+  <p>잠시만 기다려 주세요.<br>자동으로 넘어가지 않으면 아래 버튼을 눌러 주세요.</p>
+  <a class="btn" id="go" href="https://gemini.google.com/gem/7770999ac005?usp=sharing">챗봇 바로가기</a>
+</div>
+<script>
+  // 방문 기록이 전송될 시간을 잠깐 준 뒤 Gemini 챗봇으로 이동
+  var target = document.getElementById('go').href;
+  setTimeout(function () { location.replace(target); }, 1200);
+</script>
+</body>
+</html>
